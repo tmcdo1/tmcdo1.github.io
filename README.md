@@ -1,2 +1,2 @@
 # Browser-Page
-Default browser page that's loaded
+Default browser home page. Based off of Rick Shaw's: rsrickshaw.github.io
