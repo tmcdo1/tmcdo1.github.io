@@ -123,8 +123,7 @@
 
     $(document).ready(() => {
       clock();
-      //var loc = get_location();
-      var loc ='';
+      var loc = get_location();
       weather(loc);
 
       $(document).on('keydown keyup', event => interpretKey(event));
@@ -162,8 +161,8 @@
     //Asynchonously get weather data and update weather
     function weather(location){
       $.ajax({
-        //url: 'https://api.darksky.net/forecast/1903f13c0caa565e37e3f681d0013412/'+location,
-        url: 'https://api.darksky.net/forecast/1903f13c0caa565e37e3f681d0013412/37.8267,-122.4233',
+        url: 'https://api.darksky.net/forecast/1903f13c0caa565e37e3f681d0013412/'+location,
+        //url: 'https://api.darksky.net/forecast/1903f13c0caa565e37e3f681d0013412/37.8267,-122.4233',
         dataType: 'jsonp',
         success: data => {
           $('.weather').show();
