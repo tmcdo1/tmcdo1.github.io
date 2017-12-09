@@ -1,6 +1,8 @@
 <DOCTYPE! html>
 <head>
     <title>Home</title>
+    <meta charset="UTF-8"/>
+    <script src=https://code.jquery.com/jquery-3.2.1.min.js integrity=sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4= crossorigin=anonymous></script>
 </head>
 <body>
   <div>
@@ -10,7 +12,7 @@
     <div class='fav-sites'>
       <ul>
         <li id='gmail'><a href='https://www.google.com/gmail/'>
-          <img class='shortcut-icon' src='http://pngimg.com/uploads/gmail_logo/gmail_logo_PNG4.png' alt='gmail'/>
+          <img class='shortcut-icon' src='images/gmail_logo.png' alt='gmail'/>
         </a></li>
         <li id='youtube'></li>
         <li id='linkedin'></li>
@@ -19,9 +21,12 @@
     <div id='weather'></div>
   </div>>
   <style>
-    img.shortcut-icon{
-      max-width: 10%;
-      max-height: 10%;
+    body {
+      background-image: url("images/1_janapanfilova.png");
+    }
+    img.shortcut-icon {
+      max-width: 5%;
+      max-height: 5%;
     }
   </style>
   <script>
