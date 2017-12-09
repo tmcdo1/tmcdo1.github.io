@@ -123,10 +123,7 @@
 
     $(document).ready(() => {
       clock();
-      var loc = get_location();
-      console.log(loc);
-      //weather(loc);
-
+      get_location();
       $(document).on('keydown keyup', event => interpretKey(event));
     });
     //display time
@@ -143,21 +140,19 @@
       $.ajax({
         url: 'https://jsonip.com/',
         dataType: 'json',
-        async: false,
         success: data => {
           ip = data.ip;
+          //Uses ip to get coordinates
+          $.ajax({
+            url: 'https://freegeoip.net/json/'+ip,
+            dataType: 'json',
+            success: data => {
+              lat_long = data.latitude+','+data.longitude;
+              weather(lat_long);
+            }
+          });
         }
       });
-      //Uses ip to get coordinates
-      $.ajax({
-        url: 'https://freegeoip.net/json/'+ip,
-        dataType: 'json',
-        async: false,
-        success: data => {
-          lat_long = data.latitude+','+data.longitude;
-        }
-      });
-      return lat_long;
     }
     //Asynchonously get weather data and update weather
     function weather(location){
@@ -174,7 +169,8 @@
           $('.weather').hide();
         }
       });
-      setTimeout(weather(location), 900000);
+      setTimeout(weather.bind(null,location), 900000);
+      
     }
 
     function pad(n) {
