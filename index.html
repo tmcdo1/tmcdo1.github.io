@@ -3,39 +3,191 @@
     <title>Home</title>
     <meta charset="UTF-8"/>
     <script src=https://code.jquery.com/jquery-3.2.1.min.js integrity=sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4= crossorigin=anonymous></script>
+    <link href=https://fonts.googleapis.com/css?family=Roboto:100,300,400 rel=stylesheet>
 </head>
 <body>
   <div>
     <time></time>
+    <p id='ip'></p>
     <input autocomplete="false"/>
     <div id='input-info'></div>
     <div class='fav-sites'>
-      <ul>
-        <li id='gmail'><a href='https://www.google.com/gmail/'>
-          <img class='shortcut-icon' src='images/gmail_logo.png' alt='gmail'/>
-        </a></li>
-        <li id='youtube'></li>
-        <li id='linkedin'></li>
+      <ul class='horizontal-list'>
+        <li id='gmail'>
+          <a href='https://www.google.com/gmail/'>
+            <img class='shortcut-icon' src='images/gmail_logo.png' alt='gmail'/></a>
+        </li>
+        <li id='yahoo-mail'>
+          <a href='https://mail.yahoo.com/d/folders/1'>
+            <img class='shortcut-icon' src='images/yahoo-mail.png' alt='yahoo mail'/></a>
+        </li>
+        <li id='youtube'>
+          <a href='https://www.youtube.com/'>
+            <img class='shortcut-icon' src='images/youtube.png' alt='youtube'/></a>
+        </li>
+        <li id='linkedin'>
+          <a href='https://www.linkedin.com/feed/'>
+            <img class='shortcut-icon' src='images/linkedin.png' alt='linkedin'/></a>
+        </li>
       </ul>
     </div>
-    <div id='weather'></div>
-  </div>>
+    <div class='weather'>
+      <div id='temperature'></div>
+      <div id='precipitation'></div>
+      <div id='weather-description'></div>
+      <a class='cite' href='https://darksky.net/poweredby/'>Powered by Dark Sky</a>
+    </div>
+  </div>
   <style>
+    .cite {
+      font: 10px 'Roboto', sans-serif;
+      font-weight: 80;
+    }
     html {
-      background-image: linear-gradient(#40f0f9,#32ff36) no-repeat center fixed;
+      background: linear-gradient(#309eff,#30fff4) no-repeat center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
     }
-    img.shortcut-icon {
-      max-width: 2%;
-      max-height: 2%;
-      min-width: '30px';
-      min-height: '20px';
+    .fav-sites {
+      text-align: center;
+      text-orientation: horizontal;
     }
+    ul.horizontal-list {
+      list-style: none;
+    }
+    ul.horizontal-list li{
+      padding: 50px;
+      display: inline;
+    }
+    img.shortcut-icon {
+      max-width: 5%;
+      max-height: 5%;
+      min-width: 20px;
+      min-height: 20px;
+    }
+    img.shortcut-icon:hover {
+      transform: scale(1.1,1.1);
+    }
+    input {
+      display: block;
+      text-align: center;
+      width: 100%;
+      background: none;
+      border: 0;
+      color: #000;
+      font: 25px 'Roboto', sans-serif;
+      font-weight: 90;
+      padding-top: 5%;
+    }
+    #input-info {
+      display: block;
+      text-align: center;
+      font: 15px 'Roboto', sans-serif;
+      font-weight: 90;
+      padding-bottom: 5%;
+    }
+    time{
+      display: block;
+      text-align: center;
+      font: 96px 'Roboto', sans-serif;
+      font-weight: 100;
+      padding-top: 2%;
+    }
+    .weather {
+      display: block;
+      left: 0;
+      bottom: 0;
+      padding: 25px;
+      position: absolute;
+    }
+    #temperature, #weather-description, #precipitation {
+      font: 40px 'Roboto', sans-serif;
+      font-weight: 100;
+    }
+    #weather-description, #precipitation{
+      font-size: 40px;
+    }
+    #temperature {
+      font-size: 80px;
+    }
+  
   </style>
   <script>
+    "use strict";
+
+    const commands = {
+  
+    };
+
+    $(document).ready(() => {
+      clock();
+      var loc = get_location();
+      weather(loc);
+
+      $(document).on('keydown keyup', event => interpretKey(event));
+    });
+    //display time
+    function clock(){
+      var d = new Date();
+      $('time').text(pad(d.getHours())+' '+pad(d.getMinutes())+' '+pad(d.getSeconds()));
+      setTimeout(clock,1000);
+    }
+    //Get the client's location from ip address
+    function get_location(){
+      var ip;
+      var lat_long;
+      //Get location of user for weather data
+      $.ajax({
+        url: 'https://jsonip.com/',
+        dataType: 'json',
+        async: false,
+        success: data => {
+          ip = data.ip;
+        }
+      });
+      //Uses ip to get coordinates
+      $.ajax({
+        url: 'https://freegeoip.net/json/'+ip,
+        dataType: 'json',
+        async: false,
+        success: data => {
+          lat_long = data.latitude+','+data.longitude;
+        }
+      });
+      return lat_long;
+    }
+    //Asynchonously get weather data and update weather
+    function weather(location){
+      $.ajax({
+        url: 'https://api.darksky.net/forecast/1903f13c0caa565e37e3f681d0013412/'+location,
+        dataType: 'jsonp',
+        success: data => {
+          $('.weather').show();
+          $('#temperature').text(data['currently']['temperature']+'\xb0');
+          $('#precipitation').text('☂ '+data['currently']['precipProbability']+'%');
+          $('#weather-description').text(data['currently']['summary']);
+        },
+        error: () => {
+          $('.weather').hide();
+        }
+      });
+    }
+
+    function pad(n) {
+      return (n < 10) ? ("0" + n) : n;
+    }
+
+    function interpretKey(e) {
+      var input = $('input').focus().val().trim();
+      if(input != ''){
+        $('#input-info').text("Google: "+input);
+      } else {
+        $('#input-info').text("");
+      }
+      if(e.keyCode == 13 && input) window.open('https://encrypted.google.com/search?q='+encodeURIComponent(input),'_self');
+    }
 
   </script>
 </body>
