@@ -135,8 +135,13 @@
     "use strict";
 
     const commands = {
-      'g': input => { make_url('Google', 'https://encrypted.google.com/search?q=', input)},
-      'u': input => { make_url('URL', 'https://', input)}
+      'a': input => { make_url('Amazon', 'https://www.amazon.com/s/?field-keywords=', input); },
+      'g': input => { make_url('Google', 'https://encrypted.google.com/search?q=', input); },
+      'u': input => { make_url('URL', 'https://', input); },
+      'd': input => { make_url('DuckDuckGo', 'https://duckduckgo.com/?q=', input); },
+      'm': input => { make_url('Google Maps', 'https://www.google.com/maps/?q=', input); },
+      'w': input => { make_url('Wolfram Alpha', 'https://www.wolframalpha.com/input/?i=', input); },
+      'y': input => { make_url('YouTube', 'https://youtube.com/results?search_query=', input); }
     };
 
     var default_command = 'g';
@@ -213,7 +218,10 @@
     }
 
     function make_url(name='', start_url='', url_param=''){
-      current_url = start_url + encodeURIComponent(url_param);
+      if(/^https:\/\//.test(url_param))
+        current_url = url_param;
+      else
+        current_url = start_url + encodeURIComponent(url_param);
       $('#input-info').text(name + (url_param ? ': ' : '') + url_param);
     }
 
