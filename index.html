@@ -122,14 +122,14 @@
       position: absolute;
     }
     #temperature, #weather-description, #precipitation {
-      font: 6vw 'Roboto', sans-serif;
+      font: 5vw 'Roboto', sans-serif;
       font-weight: 100;
     }
     #weather-description, #precipitation{
-      font-size: 2vw;
+      font-size: 1.5vw;
     }
     #temperature {
-      font-size: 5vw;
+      font-size: 3vw;
     }
 
     @media only screen and (max-width: 769px) {
@@ -137,25 +137,40 @@
         display: none;
       }
 
-      .weather {
+      time{
         display: block;
         text-align: center;
-        bottom: 0;
-        padding: 25px;
-        padding-bottom: 5px;
-        position: static;
-      
+        font: 10vw 'Roboto', sans-serif;
+        font-weight: 100;
+        padding-top: 2%;
       }
 
-      .page-info {
+      input {
         display: block;
-        bottom: 0;
-        padding: 25px;
-        padding-top: 5px;
-        position: static;
-        
         text-align: center;
+        width: 100%;
+        background: none;
+        border: 0;
+        color: #000;
+        font: 7vw 'Roboto', sans-serif;
+        font-weight: 100;
+        padding-top: 5%;
       }
+      #input-info {
+        display: block;
+        text-align: center;
+        font: 3vw 'Roboto', sans-serif;
+        font-weight: 100;
+        padding-bottom: 5%;
+      }
+
+      #weather-description, #precipitation{
+        font-size: 7vw;
+      }
+      #temperature {
+        font-size: 10vw;
+      }
+
     }
   
   </style>
