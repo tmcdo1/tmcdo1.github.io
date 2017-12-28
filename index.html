@@ -191,7 +191,7 @@
       'clear': 'linear'
     };
 
-    var default_command = 'g';
+    var default_command = 'd';
 
     var delimeter = ' ';
     var current_url = '';
@@ -257,6 +257,8 @@
       var com = input.split(delimeter)[0];
       if(commands[com]) 
         commands[com](input.substr(com.length +1));
+      else if(/\w\.\w{2,3}\W/.test(input))
+        commands['u'](input);
       else if(input)
         commands[default_command](input);
       else
@@ -265,7 +267,7 @@
     }
 
     function make_url(name='', start_url='', url_param=''){
-      if(/^https:\/\//.test(url_param))
+      if(/^https?:\/\//.test(url_param))
         current_url = url_param;
       else
         current_url = start_url + encodeURIComponent(url_param);
