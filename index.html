@@ -59,7 +59,7 @@
       position: absolute;
     }
     html {
-      background: linear-gradient(#309eff,#30fff4) no-repeat center fixed;
+      background: linear-gradient(#309eff,#ffffff) no-repeat center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -97,7 +97,7 @@
       border: 0;
       color: #000;
       font: 2vw 'Roboto', sans-serif;
-      font-weight: 95;
+      font-weight: 100;
       padding-top: 5%;
     }
     #input-info {
@@ -190,7 +190,10 @@
 
     //Weather-responsive background gradients. TO BE IMPLEMENTED
     const weather_gradients = {
-      'clear': 'linear'
+      'clear': 'linear-gradient(#309eff,#ffffff) no-repeat center fixed',
+      'cloudy': 'linear-gradient(b3b3b3,#ffffff) no-repeat center fixed',
+      'snow': 'linear-gradient(#ffffff,#ffffff) no-repeat center fixed',
+      'rain': 'linear-gradient(#309eff,b3b3b3) no-repeat center fixed'
     };
 
     var default_command = 'd';
@@ -241,6 +244,11 @@
           $('#temperature').text(data['currently']['temperature']+'\xb0');
           $('#precipitation').text('☂ '+data['currently']['precipProbability']+'%');
           $('#weather-description').text(data['currently']['summary']);
+          var icon_str = data['currently']['icon'].toLowerCase();
+          icon_str = (icon_str.indexOf('cloudy') !== -1 || icon_str==='fog' ? 'cloudy' : icon_str);
+          icon_str = (icon_str==='sleet' ? 'snow' : icon_str);
+          icon_str = (icon_str.indexOf('clear') !== -1 ? 'clear' : icon_str);
+          $('html').css('background',weather_gradients[icon_str]);
         },
         error: () => {
           $('.weather').hide();
@@ -271,7 +279,7 @@
 
     //Creates URL based off of command
     function make_url(name='', start_url='', url_param=''){
-      if(name=='URL')
+      if(name==='URL')
         current_url = (/^https?:\/\//.test(url_param) ? '' : start_url) + url_param;
       else
         current_url = start_url + encodeURIComponent(url_param);
