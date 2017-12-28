@@ -176,7 +176,8 @@
   </style>
   <script>
     "use strict";
-
+    
+    //Object containing commands
     const commands = {
       'a': input => { make_url('Amazon', 'https://www.amazon.com/s/?field-keywords=', input); },
       'g': input => { make_url('Google', 'https://encrypted.google.com/search?q=', input); },
@@ -187,6 +188,7 @@
       'y': input => { make_url('YouTube', 'https://youtube.com/results?search_query=', input); }
     };
 
+    //Weather-responsive background gradients. TO BE IMPLEMENTED
     const weather_gradients = {
       'clear': 'linear'
     };
@@ -248,6 +250,7 @@
       
     }
 
+    //pads single digit numbers with 0
     function pad(n) {
       return (n < 10) ? ("0" + n) : n;
     }
@@ -255,20 +258,21 @@
     function interpretKey(e) {
       var input = $('input').focus().val().trim();
       var com = input.split(delimeter)[0];
-      if(commands[com]) 
+      if(commands[com]) //Checks to see if command is in input
         commands[com](input.substr(com.length +1));
-      else if(/\w\.\w{2,3}\W?/.test(input))
+      else if(/\w\.\w{2,3}\W?/.test(input)) //Checks to see if input is a URL
         commands['u'](input);
-      else if(input)
+      else if(input) //Resorts to default command if none of the above conditions are met
         commands[default_command](input);
       else
         make_url();
-      if(e.keyCode == 13 && input) window.open(current_url,'_self');
+      if(e.keyCode == 13 && input) window.open(current_url,'_self'); //Opens webpage when enter key is pressed
     }
 
+    //Creates URL based off of command
     function make_url(name='', start_url='', url_param=''){
-      if(/^https?:\/\//.test(url_param))
-        current_url = url_param;
+      if(name=='URL')
+        current_url = (/^https?:\/\//.test(url_param) ? '' : start_url) + url_param;
       else
         current_url = start_url + encodeURIComponent(url_param);
       $('#input-info').text(name + (url_param ? ': ' : '') + url_param);
