@@ -191,9 +191,9 @@
     //Weather-responsive background gradients. TO BE IMPLEMENTED
     const weather_gradients = {
       'clear': 'linear-gradient(#309eff,#ffffff) no-repeat center fixed',
-      'cloudy': 'linear-gradient(b3b3b3,#ffffff) no-repeat center fixed',
+      'cloudy': 'linear-gradient(#b3b3b3,#ffffff) no-repeat center fixed',
       'snow': 'linear-gradient(#ffffff,#ffffff) no-repeat center fixed',
-      'rain': 'linear-gradient(#309eff,b3b3b3) no-repeat center fixed'
+      'rain': 'linear-gradient(#309eff,#b3b3b3) no-repeat center fixed'
     };
 
     var default_command = 'd';
@@ -245,7 +245,7 @@
           $('#precipitation').text('☂ '+data['currently']['precipProbability']+'%');
           $('#weather-description').text(data['currently']['summary']);
           var icon_str = data['currently']['icon'].toLowerCase();
-          icon_str = (icon_str.indexOf('cloudy') !== -1 || icon_str==='fog' ? 'cloudy' : icon_str);
+          icon_str = ((icon_str.indexOf('cloudy') !== -1 || icon_str==='fog') ? 'cloudy' : icon_str);
           icon_str = (icon_str==='sleet' ? 'snow' : icon_str);
           icon_str = (icon_str.indexOf('clear') !== -1 ? 'clear' : icon_str);
           $('html').css('background',weather_gradients[icon_str]);
