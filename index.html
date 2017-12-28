@@ -257,7 +257,7 @@
       var com = input.split(delimeter)[0];
       if(commands[com]) 
         commands[com](input.substr(com.length +1));
-      else if(/\w\.\w{2,3}\W/.test(input))
+      else if(/\w\.\w{2,3}\W?/.test(input))
         commands['u'](input);
       else if(input)
         commands[default_command](input);
