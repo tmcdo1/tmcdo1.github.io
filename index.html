@@ -242,7 +242,7 @@
         success: data => {
           $('.weather').show();
           $('#temperature').text(data['currently']['temperature']+'\xb0');
-          prec_perc = float(data['currently']['precipProbability'])*100;
+          var prec_perc = Number(data['currently']['precipProbability'])*100;
           $('#precipitation').text('☂ '+prec_perc+'%');
           $('#weather-description').text(data['currently']['summary']);
           var icon_str = data['currently']['icon'].toLowerCase();
