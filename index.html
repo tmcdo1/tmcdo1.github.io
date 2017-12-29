@@ -242,7 +242,8 @@
         success: data => {
           $('.weather').show();
           $('#temperature').text(data['currently']['temperature']+'\xb0');
-          $('#precipitation').text('☂ '+data['currently']['precipProbability']+'%');
+          prec_perc = float(data['currently']['precipProbability'])*100;
+          $('#precipitation').text('☂ '+prec_perc+'%');
           $('#weather-description').text(data['currently']['summary']);
           var icon_str = data['currently']['icon'].toLowerCase();
           icon_str = ((icon_str.indexOf('cloudy') !== -1 || icon_str==='fog') ? 'cloudy' : icon_str);
