@@ -269,7 +269,7 @@
       var com = input.split(delimeter)[0];
       if(commands[com]) //Checks to see if command is in input
         commands[com](input.substr(com.length +1));
-      else if(/^(https?:\/\/)?(\w+\.\w+)+([^\w\s]\S*?)*$/.test(input)) //Checks to see if input is a URL
+      else if(/^(https?:\/\/)?([\w\-]+\.[\w-]+)+([^\w\s]\S*?)*$/.test(input)) //Checks to see if input is a URL
         commands['u'](input);
       else if(input) //Resorts to default command if none of the above conditions are met
         commands[default_command](input);
