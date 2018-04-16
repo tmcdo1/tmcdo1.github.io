@@ -1,0 +1,122 @@
+/*
+html {
+    background-color: darkgray;
+}
+*/
+
+body, html {
+    height: 100%;
+}
+
+header {
+    /*background-color: darkgray; */
+    text-align: center;
+}
+
+.blue {
+    background-color: #3399ff !important;
+    color: white;
+}
+
+.content {
+    height: 100%;
+    padding: 15px;
+}
+
+.car-content {
+    height: 100%;
+    display: inline-block;
+}
+
+.car-image {
+    padding: 15px;
+    min-width: 250px;
+    width: 30%;
+    border-radius: 10%;
+}
+
+#experiences-carousel {
+    text-align: center;
+    background-color: lightgray;
+
+    /* Parallax */
+    /* The image used */
+    background-image: url("https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpaperlepi.com%2Fwp-content%2Fuploads%2F2014%2F09%2FLight-Patterns-Wallpaper-Picture.jpg&f=1");
+
+    /* Full height */
+    height: 50%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.nav-tabs {
+    background-color: #3399ff;
+}
+
+.nav-item {
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: white;
+}
+
+.section {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    height: 10%;
+    text-align: center;
+}
+
+.v-align-center {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.wallpaperspots.com%2Fwp-content%2Fuploads%2F2014%2F04%2Fwallpaper-nature-high-resolution.jpg-1920x1080.jpg&f=1");
+
+    /* Full height */
+    height: 50%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    text-align: center;
+    position: relative;
+}
+
+.parallax > p {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+
+.border {
+    background-color: rgba(117,117,117,.75);
+    padding: 15px;
+}
+
+ /* Turn off parallax scrolling for all tablets and phones. Increase/decrease the pixels if needed */
+ @media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+} 
