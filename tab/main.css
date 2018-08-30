@@ -1,0 +1,126 @@
+.cite {
+    font: 1vw 'Roboto', sans-serif;
+    font-weight: 80;
+}
+.page-info {
+    display: inline-block;
+    bottom: 0;
+    right:0;
+    padding: 25px;
+    position: absolute;
+}
+html {
+    background: #20b2aa;
+    color: white;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 200px;
+}
+.fav-sites {
+    text-align: center;
+    text-orientation: horizontal;
+    padding-bottom: 15%;
+    position: absolute;
+    bottom: 0;
+}
+ul.horizontal-list {
+    list-style: none;
+}
+ul.horizontal-list li{
+    padding: 50px;
+    display: inline;
+}
+img.shortcut-icon {
+    max-width: 4%;
+    max-height: 4%;
+    min-width: 40px;
+    min-height: 40px;
+}
+img.shortcut-icon:hover {
+    transform: scale(1.1,1.1);
+}
+input {
+    display: block;
+    text-align: center;
+    width: 100%;
+    background: none;
+    border: 0;
+    color: rgb(255, 255, 255);
+    font: 2vw 'Roboto', sans-serif;
+    font-weight: 100;
+    padding-top: 5%;
+}
+#input-info {
+    display: block;
+    text-align: center;
+    font: 1vw 'Roboto', sans-serif;
+    font-weight: 95;
+    padding-bottom: 5%;
+}
+time{
+    display: block;
+    text-align: center;
+    font: 5vw 'Roboto', sans-serif;
+    font-weight: 100;
+    padding-top: 2%;
+}
+.weather {
+    display: block;
+    left: 0;
+    bottom: 0;
+    padding: 25px;
+    position: absolute;
+}
+#temperature, #weather-description, #precipitation {
+    font: 5vw 'Roboto', sans-serif;
+    font-weight: 100;
+}
+#weather-description, #precipitation{
+    font-size: 1.5vw;
+}
+#temperature {
+    font-size: 3vw;
+}
+
+@media only screen and (max-width: 769px) {
+    .fav-sites {
+        display: none;
+    }
+
+    time{
+        display: block;
+        text-align: center;
+        font: 10vw 'Roboto', sans-serif;
+        font-weight: 100;
+        padding-top: 2%;
+    }
+
+    input {
+        display: block;
+        text-align: center;
+        width: 100%;
+        background: none;
+        border: 0;
+        color: #000;
+        font: 7vw 'Roboto', sans-serif;
+        font-weight: 100;
+        padding-top: 5%;
+    }
+    #input-info {
+        display: block;
+        text-align: center;
+        font: 3vw 'Roboto', sans-serif;
+        font-weight: 100;
+        padding-bottom: 5%;
+    }
+
+    #weather-description, #precipitation{
+        font-size: 7vw;
+    }
+    #temperature {
+        font-size: 10vw;
+    }
+
+}
