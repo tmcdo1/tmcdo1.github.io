@@ -7,7 +7,7 @@ body {
 }
 
 nav {
-    display: inline-block;
+    display: block;
     height: 6vh;
     width: 100vw;
     background: #20b2aa;
@@ -17,9 +17,12 @@ nav {
 }
 
 nav > h1 {
+    display: inline-block;
     color: white;
-    height: 100%;
-    line-height: 100%;
+    height: inherit;
+    line-height: 6vh;
+    margin: 0;
+    vertical-align: middle;
 }
 
 .spacer {
@@ -41,6 +44,8 @@ nav > h1 {
 }
 
 #content {
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
     display: flex;
     flex-wrap: wrap;
     text-align: center;
