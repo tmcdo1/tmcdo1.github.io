@@ -2,7 +2,7 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
-    /* font-size: 2em; */
+    font-size: 1.3em;
     padding: 0;
 }
 
@@ -90,8 +90,8 @@ footer {
 }
 
 .link-logos > li > a > img {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     vertical-align: middle;
 }
 
@@ -101,4 +101,9 @@ footer {
 
 .main-title {
     margin-top: 48px;
+}
+
+.middle {
+    display: inline-block;
+    flex-grow: 1;
 }
