@@ -70,6 +70,7 @@ footer {
     width: 100vw;
     text-align: center;
     background: #c9c362;
+    padding: 4px;
 }
 
 .page-link {
@@ -88,7 +89,7 @@ footer {
     color: #aa20b2;
 }
 
-.link-logos > li > img {
+.link-logos > li > a > img {
     height: 50px;
     width: 50px;
     vertical-align: middle;
