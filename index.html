@@ -4,13 +4,14 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Thomas McDonald</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">  
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav>
+    <!-- <nav>
         <h1 id='name'>Thomas McDonald</h1>
     </nav>
 
@@ -41,6 +42,115 @@
 
     <footer>
         Email: <span>thomasmcdonald</span>@<span>tamu.edu</span>
-    </footer>
+    </footer> -->
+    <nav id="navbar" class="topnav">
+        <a href="#main" class="nav-link">Thomas McDonald</a>
+        <div class="spacer"></div>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="navbar()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+    <script>
+        function navbar() {
+            var x = document.getElementById("navbar");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function resClickListener() {
+            if(document.getElementById("navbar").classList.contains("responsive")) {
+                document.getElementById("navbar").className = "topnav"
+            }
+        }
+
+        let navLinks = document.getElementsByClassName("nav-link")
+        for(link of navLinks) {
+            link.addEventListener('click', resClickListener)
+        }
+    </script>
+
+    <section id="main" class="parallax">
+        <div id="main-picture">
+            <img src='./images/thomas.png' height='100%'/>
+        </div>
+        <div id="main-content">
+            <h3>Thomas McDonald</h3>
+            <p>B.S. in Computer Science</p>
+            <p>Texas A&M University, Class of 2020</p>
+        </div>
+    </section>
+
+    <section id="about" class="flex hcenter-flex vcenter-flex vertical-flex">
+        <h1>About Me</h1>
+        <div>
+            <p>
+                Howdy! I am a junior computer science student at Texas A&M University. I am the co-chair for workshops for the Aggie Coding Club,
+                a project based organization that connects students to work on projects. We put on weekly workshops for our members covering topics
+                from getting started with Git to creating a web application to using Docker to containerize an application.
+            </p>
+            <p>
+                I love learning about how to to automate the development lifecycle from using CI tools to deploying with an orchestration platform, like Kubernetes. Most of my experience is doing web development with some more experience in developing for Kubernetes and other development work.
+            </p>
+        </div>
+        <div id="about-buttons">
+            <a class="button" href="resume/resume-fall2018.pdf" target="_blank">Resume</a>
+            <a class="button" href="classes/index.html">Classes</a>
+        </div>
+    </section>
+
+    <section id="experience" class="parallax flex flex-wrap">
+        <div class="card even spacer">
+            <h3><img id="att-logo" class="exp-logo" src="images/att.png" alt="AT&T Logo"><span>AT&T</span></h3>
+            <h5>Software Engineering Intern</h5>
+            <ul>
+                <li>Worked heavily with Kubernetes to deploy and scale microservices to be used by the entire company</li>
+                <li>Worked with clients to send application alerts from their deployed services and create custom Docker images</li>
+                <li>Created an analytic dashboard with a team of interns to provide insights</li>
+            </ul>
+        </div>
+        <div class="card even spacer">
+            <h3><img id="sympliact-logo" class="exp-logo" src="https://sympliact.com/assets/images/logo-gray.svg"><span>Sympliact</span></h3>
+            <h5>Web Developer</h5>
+            <ul>
+                <li>Worked on web platform using React and Node.js that is used in a medical practice to track and manage patients</li>
+            </ul>
+        </div>
+        <div class="card even spacer">
+            <h3><img id="vize-logo" class="exp-logo" src="https://static1.squarespace.com/static/58faab4846c3c46446a9d0dc/t/5955b5256b8f5be1da3b6bf8/1543894989748/?format=1500w"></h3>
+            <h5>Software Engineer</h5>
+            <ul>
+                <li>Developed automated SMS survey tool with AWS Lambda and Twilio API</li>
+                <li>Did basic front-end work with Bootstrap and React</li>
+            </ul>
+        </div>
+        <div class="card even spacer">
+            <h3><img id="psi-logo" class="exp-logo" src="images/psi_small.png"><span>PSI Labs, Texas A&M University</span></h3>
+            <h5>Summer Undergraduate Researcher</h5>
+            <ul>
+                <li>Developed a mobile game using Unity and Andriod Studio</li>
+                <li>Wrote code to stream heart rate variability from a wearable sensor to the phone</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="flex vertical-flex hcenter-flex vcenter-flex">
+        <h1>Contact and Other Info</h1>
+        <ul id="social">
+            <h4>Social</h4>
+            <li><a href='https://github.com/tmcdo1' class='page-link' target='_blank'><img src='./images/githubpng.png'/> Github</a></li>
+            <li><a href='https://www.linkedin.com/in/thomasejmcdonald' class='page-link' target='_blank'><img src='./images/linkedin.png'/> LinkedIn</a></li>
+
+            <h4>Email</h4>
+            <li><span>thomasmcdonald</span>@<span>tamu.edu</span></li>
+        </ul>
+    </section>
+
+    <footer>Thomas McDonald © 2019</footer>
 </body>
 </html>
