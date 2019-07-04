@@ -37,7 +37,7 @@ data = [
     {
         name: 'Phrasify',
         url: 'http://134.209.57.254:3030/',
-        url_name: 'phrasiphy',
+        url_name: 'phrasify',
         owner: 'Jeff Hykin, Hannah Gooden, etc',
         type: type.UTIL
     },
