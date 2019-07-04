@@ -1,0 +1,44 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: blanchedalmond;
+}
+
+th, td {
+    /* border: 1px solid black;
+    border-collapse: collapse; */
+    padding: 12px 16px;
+}
+
+table {
+    width: 75vw;
+    border-spacing: 0px 1px;
+    margin: 6px auto;
+    /* background-color: white */
+}
+
+tr {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: 0.3s;
+    background-color: whitesmoke;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+/* On mouse-over, add a deeper shadow */
+tr:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transform: scale(1.025);
+}
+
+#title {
+    margin: 6px auto;
+    text-align: center;
+}
