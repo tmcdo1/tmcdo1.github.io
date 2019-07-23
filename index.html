@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">  
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <nav id="navbar" class="topnav">
@@ -54,7 +55,7 @@
         </div>
     </section>
 
-    <section id="about" class="flex hcenter-flex vcenter-flex vertical-flex">
+    <section id="about" class="flex hcenter-flex vcenter-flex vertical-flex card">
         <h1>About Me</h1>
         <div>
             <p>
@@ -63,7 +64,11 @@
                 from getting started with Git to creating a web application to using Docker to containerize an application.
             </p>
             <p>
-                I love learning about how to to automate the development lifecycle from using CI tools to deploying with an orchestration platform, like Kubernetes. Most of my experience is doing web development with some more experience in developing for Kubernetes and other development work.
+                I love learning about how to to automate the development lifecycle from using CI tools to deploying with an orchestration platform, like Kubernetes. 
+                Most of my experience is doing web development with some more experience in developing for Kubernetes and other development work.
+            </p>
+            <p>
+                Outside of development, I write a blog called <a href='https://livingintrospectively.com'><em>Living Introspectively</em></a>.
             </p>
         </div>
         <div id="about-buttons">
@@ -72,8 +77,9 @@
         </div>
     </section>
 
-    <section id="experience" class="parallax flex flex-wrap">
-        <div class="card even spacer">
+    <section id="experience" class="flex vertical-flex">
+        <h2>Experience</h2>
+        <div class="card" data-aos="slide-right">
             <h3><img id="att-logo" class="exp-logo" src="images/att.png" alt="AT&T Logo"><span>AT&T</span></h3>
             <h5>Software Engineering Intern</h5>
             <ul>
@@ -82,14 +88,14 @@
                 <li>Created an analytic dashboard with a team of interns to provide insights</li>
             </ul>
         </div>
-        <div class="card even spacer">
-            <h3><img id="sympliact-logo" class="exp-logo" src="https://sympliact.com/assets/images/logo-gray.svg"><span>Sympliact</span></h3>
+        <div class="card" data-aos="slide-left">
+            <h3><img id="sympliact-logo" class="exp-logo" src="images/sympliact.svg"><span>Sympliact</span></h3>
             <h5>Web Developer</h5>
             <ul>
                 <li>Worked on web platform using React and Node.js that is used in a medical practice to track and manage patients</li>
             </ul>
         </div>
-        <div class="card even spacer">
+        <div class="card" data-aos="slide-right">
             <h3><img id="vize-logo" class="exp-logo" src="https://static1.squarespace.com/static/58faab4846c3c46446a9d0dc/t/5955b5256b8f5be1da3b6bf8/1543894989748/?format=1500w"></h3>
             <h5>Software Engineer</h5>
             <ul>
@@ -97,7 +103,7 @@
                 <li>Did basic front-end work with Bootstrap and React</li>
             </ul>
         </div>
-        <div class="card even spacer">
+        <div class="card" data-aos="slide-left">
             <h3><img id="psi-logo" class="exp-logo" src="images/psi_small.png"><span>PSI Labs, Texas A&M University</span></h3>
             <h5>Summer Undergraduate Researcher</h5>
             <ul>
@@ -120,5 +126,10 @@
     </section>
 
     <footer>Thomas McDonald © 2019</footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
