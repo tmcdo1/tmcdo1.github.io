@@ -1,4 +1,5 @@
 html, body {
+    width: 100vw;
     margin: 0;
     padding: 0;
 }
@@ -41,4 +42,40 @@ tr:hover {
 #title {
     margin: 6px auto;
     text-align: center;
+}
+
+@media screen and (max-width: 715px) {
+
+    table, thead, tbody, th, td, tr { 
+		display: block; 
+    }
+    
+    table {
+        width: 95vw;
+        margin: 0 auto;
+    }
+
+    .res-row {
+        margin-top: 4px;
+        width: 100%;
+    }
+
+    .res-row > td::before {
+		/* width: 50vw;  */
+		/* padding-right: 10px; */
+        /* white-space: nowrap;  */
+        font-weight: bold;
+    }
+
+    thead tr {
+        position: absolute;
+        left: -9999px;
+        top: -9999;
+    }
+
+    .res-row > td:nth-of-type(1)::before { content: 'Site-Name: ' }
+    .res-row > td:nth-of-type(2)::before { content: 'URL: ' }
+    .res-row > td:nth-of-type(3)::before { content: 'Owner: ' }
+    .res-row > td:nth-of-type(4)::before { content: 'Content Type: ' }
+
 }

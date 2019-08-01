@@ -53,19 +53,10 @@ nav {
     padding: 12px;
 }
 
-section {
-    /* min-height: 100vh; */
-}
-
-#about {
+#about, #projects {
     max-width: 700px;
     margin: 72px auto 12px auto;
     padding: 32px;
-}
-
-#about > h1, #about > div {
-    /* width: 50vw; */
-    /* width: 500px; */
 }
 
 #about-buttons {
@@ -103,6 +94,10 @@ section {
     margin: 0;
     padding: 12px 48px;
     list-style: initial;
+}
+
+#projects > ul > li {
+    margin: 20px 0;
 }
 
 ul {

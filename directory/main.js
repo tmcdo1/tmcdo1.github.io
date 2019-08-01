@@ -57,10 +57,17 @@ data = [
     },
     {
         name: 'Thomas\' Personal Site',
-        url: 'https://tmcdo1.github.io/',
-        url_name: 'tmcdo1.github.io',
+        url: 'http://tmcd.me/',
+        url_name: 'tmcd.me',
         owner: 'Thomas McDonald',
         type: type.PRO
+    },
+    {
+        name: 'Aggie Coding Connect',
+        url: 'https://tranquil-dusk-38037.herokuapp.com/',
+        url_name: 'aggiecodingconnect',
+        owner: 'Thomas, Jeff, Nicko, Mitchell, etc',
+        type: type.UTIL
     }
 ]
 
@@ -84,6 +91,7 @@ function createRow(siteInfo) {
     row.appendChild(url)
     row.appendChild(owner)
     row.appendChild(type)
+    row.classList.add('res-row')
     
     return row
 }
