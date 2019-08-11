@@ -23,7 +23,8 @@ nav {
 }
 
 #main {
-    background-image: url("images/blue_gradient_background.jpg");
+    /* background-image: url("images/blue_gradient_background.jpg"); */
+    background-image: linear-gradient(to top right, #00bae9, rgb(89, 216, 89));
     height: 100vh;
     color: white;
 
@@ -137,7 +138,8 @@ footer {
 .card {
     text-align: center;
     margin: 12px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6); */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     /* box-shadow: 0 4px 8px 0 white; */
     background: white;
 }
