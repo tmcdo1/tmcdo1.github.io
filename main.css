@@ -149,6 +149,10 @@ footer {
     margin-right: 12px;
 }
 
+.jpmc-logo {
+    height: 50px;
+}
+
 .parallax {
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
