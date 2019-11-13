@@ -1,3 +1,8 @@
+:root {
+    --nav-height: 50px;
+    --section-height: 100vh;
+}
+
 html {
     scroll-behavior: smooth;
     width: 100vw;
@@ -22,23 +27,33 @@ nav {
     top: 0;
     color: white;
     z-index: 3;
-    
     margin: 0;
+    height: var(--nav-height);
+}
+
+section {
+    min-height: var(--section-height);
+}
+
+.sticky {
+    position: sticky;
+    top: 50px;
+    height: var(--section-height);
+}
+
+.sticky-container {
+    position: relative;
+}
+
+#about {
+    margin-top: calc(-100vh + var(--nav-height));
+    height: calc(2 * var(--section-height));
+    z-index: -1;
+    align-items: flex-start;
 }
 
 #main {
-    /* background-image: url("images/blue_gradient_background.jpg"); */
-    /* background-image: linear-gradient(to top right, #00bae9, rgb(89, 216, 89));
-    height: 100vh;
-    color: white; */
-
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 10px 20px 6px rgb(184, 184, 184); */
-
-    position: absolute;
+    /* position: absolute; */
     margin-top: 0;
     width: 100vw;
     padding: 0;
@@ -54,7 +69,7 @@ nav {
 
 #main-body {
     background-image: linear-gradient(to top right, #00bae9, rgb(89, 216, 89));
-    min-height: 100vh;
+    height: 100vh;
     width: 100vw;
     color: white;
     margin: 0;
@@ -87,8 +102,7 @@ nav {
 }
 
 #about, #projects {
-    max-width: 700px;
-    margin: 72px auto 12px auto;
+    /* margin: 72px auto 12px auto; */
     padding: 32px;
 }
 
@@ -174,6 +188,17 @@ footer {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     /* box-shadow: 0 4px 8px 0 white; */
     background: white;
+    max-width: 700px;
+    padding: 12px;
+}
+
+.container {
+    background-color: lightblue;
+}
+
+.content {
+    padding-top: 12px;
+    width: 50vw;
 }
 
 .exp-logo {
