@@ -11,6 +11,22 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script>
+        function debounce(func, wait, immediate) {
+            let timeout
+            return function() {
+                let context = this, args = arguments
+                let later = function() {
+                    timeout = null
+                    if (!immediate) func.apply(context, args)
+                }
+                let callNow = immediate && !timeout
+                clearTimeout(timeout)
+                timeout = setTimeout(later, wait)
+                if (callNow) func.apply(context, args)
+            }
+        }
+    </script>
 </head>
 <body>
     <nav id="navbar" class="topnav">
@@ -61,35 +77,45 @@
     </section>
     <script>
         let currentTop = 0
+        let currentScroll = 0
+        const scrollThreshold = 100
         const mainSectionHeight = document.getElementById('main').offsetHeight
         let scale = 1
+        //let mainSection = document.getElementById('main')
 
         function mainWheel(event) {
-            let mainSection = document.getElementById('main')
-            //console.log('ABS', Math.abs(currentTop), 'WINDOW', mainSection.offsetHeight)
+           
+            //if(Math.abs(currentScroll) < 3*scrollThreshold) {
+            //    event.preventDefault()
+            //}
+//
+            //currentScroll = Math.max(currentScroll + event.deltaY, 0)
+            //if (currentScroll > scrollThreshold) {
+            //    mainSection.classList.add('hoverUp')
+            //} else {
+            //    mainSection.classList.remove('hoverUp')
+            //}
+
+            // console.log('ABS', Math.abs(currentTop), 'WINDOW', mainSection.offsetHeight)
             if (Math.abs(currentTop) < mainSectionHeight) {
                 event.preventDefault()
+                //console.log('PREVENT', event)
             }
-            console.log(mainSection.style.top)
-            currentTop -= event.deltaY * mainSection.offsetHeight/mainSectionHeight
-            currentTop = Math.min(0, currentTop)
-            mainSection.style.top = currentTop + 'px'
-            //mainSection.style.left = currentTop*.1 + 'px'
-
-            //if(event.deltaY < 0) {
-            //    if(mainSection.style.left == '0px') {
-            //        scale += event.deltaY * 0.001;
-            //    }
-            //} else {
-            scale += event.deltaY * 0.001;
-            //}
-            // Restrict scale
-            scale = Math.min(Math.max(1, scale), 1.1)
-            // Apply scale transform
-            mainSection.style.transform = `scale(${scale})`
+            debounce(() => {
+                console.log('TOP', mainSection.style.top)
+                currentTop -= event.deltaY * mainSection.offsetHeight/mainSectionHeight
+                currentTop = Math.min(0, currentTop)
+                mainSection.style.top = currentTop + 'px'
+            
+                scale += event.deltaY * 0.0005;
+                scale = Math.min(Math.max(1, scale), 1.1)
+                // Apply scale transform
+                mainSection.style.transform = `scale(${scale})`
+            }, 100)()
         }
 
         const mainSection = document.getElementById('main')
+        //document.onwheel = debounce(mainWheel, 50)
         document.onwheel = mainWheel
 
     </script>
