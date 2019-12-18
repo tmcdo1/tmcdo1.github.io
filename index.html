@@ -10,7 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">  
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script>
         function debounce(func, wait, immediate) {
             let timeout
@@ -75,9 +79,9 @@
         </div>
     </section>
     
-    <section id="about" class="sticky-container flex hcenter-flex container">
-        <div class='sticky'>
-            <div class="content">
+    <section id="about" class="sticky-container">
+        <div class='sticky flex vcenter-flex hcenter-flex container'>
+            <div class="card">
                 <h1>About Me</h1>
                 <div>
                     <p>
@@ -101,47 +105,49 @@
         </div>
     </section>
 
-    <section id="experience" class="flex vertical-flex">
+    <section id="experience">
         <h2>Experience</h2>
-        <div class="card" data-aos="slide-right">
-            <h3><img id="att-logo" class="jpmc-logo exp-logo" src="images/jpmc.png" alt="JP Morgan Logo"></h3>
-            <h5>Software Engineering Intern</h5>
-            <ul>
-                <li>Introduced Blue/Green deployments and post verification testing to increase automation</li>
-                <li>Developed logging utility to centralize application logs using ElasticSearch and reduced number of emails from ~300 to 15 per release</li>
-            </ul>
-        </div>
-        <div class="card" data-aos="slide-right">
-            <h3><img id="att-logo" class="exp-logo" src="images/att.png" alt="AT&T Logo"><span>AT&T</span></h3>
-            <h5>Software Engineering Intern</h5>
-            <ul>
-                <li>Worked heavily with Kubernetes to deploy and scale microservices to be used by the entire company</li>
-                <li>Worked with clients to send application alerts from their deployed services and create custom Docker images</li>
-                <li>Created an analytic dashboard with a team of interns to provide insights</li>
-            </ul>
-        </div>
-        <div class="card" data-aos="slide-left">
-            <h3><img id="sympliact-logo" class="exp-logo" src="images/sympliact.svg"><span>Sympliact</span></h3>
-            <h5>Web Developer</h5>
-            <ul>
-                <li>Worked on web platform using React and Node.js that is used in a medical practice to track and manage patients</li>
-            </ul>
-        </div>
-        <div class="card" data-aos="slide-right">
-            <h3><img id="vize-logo" class="exp-logo" src="https://static1.squarespace.com/static/58faab4846c3c46446a9d0dc/t/5955b5256b8f5be1da3b6bf8/1543894989748/?format=1500w"></h3>
-            <h5>Software Engineer</h5>
-            <ul>
-                <li>Developed automated SMS survey tool with AWS Lambda and Twilio API</li>
-                <li>Did basic front-end work with Bootstrap and React</li>
-            </ul>
-        </div>
-        <div class="card" data-aos="slide-left">
-            <h3><img id="psi-logo" class="exp-logo" src="images/psi_small.png"><span>PSI Labs, Texas A&M University</span></h3>
-            <h5>Summer Undergraduate Researcher</h5>
-            <ul>
-                <li>Developed a mobile game using Unity and Andriod Studio</li>
-                <li>Wrote code to stream heart rate variability from a wearable sensor to the phone</li>
-            </ul>
+        <div id="experience-scroll">
+            <div class="panel absolute jpmc">
+                <h3><img id="jpmc-logo" class="jpmc-logo exp-logo" src="images/jpmc.png" alt="JP Morgan Logo"></h3>
+                <h5>Software Engineering Intern</h5>
+                <ul>
+                    <li>Introduced Blue/Green deployments and post verification testing to increase automation</li>
+                    <li>Developed logging utility to centralize application logs using ElasticSearch and reduced number of emails from ~300 to 15 per release</li>
+                </ul>
+            </div>
+            <div class="panel absolute att">
+                <h3><img id="att-logo" class="exp-logo" src="images/att.png" alt="AT&T Logo"><span>AT&T</span></h3>
+                <h5>Software Engineering Intern</h5>
+                <ul>
+                    <li>Worked heavily with Kubernetes to deploy and scale microservices to be used by the entire company</li>
+                    <li>Worked with clients to send application alerts from their deployed services and create custom Docker images</li>
+                    <li>Created an analytic dashboard with a team of interns to provide insights</li>
+                </ul>
+            </div>
+            <div class="panel absolute sympliact">
+                <h3><img id="sympliact-logo" class="exp-logo" src="images/sympliact.svg"><span>Sympliact</span></h3>
+                <h5>Web Developer</h5>
+                <ul>
+                    <li>Worked on web platform using React and Node.js that is used in a medical practice to track and manage patients</li>
+                </ul>
+            </div>
+            <div class="panel absolute vize">
+                <h3><img id="vize-logo" class="exp-logo" src="https://static1.squarespace.com/static/58faab4846c3c46446a9d0dc/t/5955b5256b8f5be1da3b6bf8/1543894989748/?format=1500w"></h3>
+                <h5>Software Engineer</h5>
+                <ul>
+                    <li>Developed automated SMS survey tool with AWS Lambda and Twilio API</li>
+                    <li>Did basic front-end work with Bootstrap and React</li>
+                </ul>
+            </div>
+            <div class="panel absolute psi">
+                <h3><img id="psi-logo" class="exp-logo" src="images/psi_small.png"><span>PSI Labs, Texas A&M University</span></h3>
+                <h5>Summer Undergraduate Researcher</h5>
+                <ul>
+                    <li>Developed a mobile game using Unity and Andriod Studio</li>
+                    <li>Wrote code to stream heart rate variability from a wearable sensor to the phone</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -169,54 +175,29 @@
 
     <footer>Thomas McDonald © 2019</footer>
 
-    <!-- <script>
-        let currentTop = 0
-        let currentScroll = 0
-        const scrollThreshold = 100
-        const mainSectionHeight = document.getElementById('main').offsetHeight
-        let scale = 1
-        //let mainSection = document.getElementById('main')
-
-        function mainWheel(event) {
-           
-            //if(Math.abs(currentScroll) < 3*scrollThreshold) {
-            //    event.preventDefault()
-            //}
-//
-            //currentScroll = Math.max(currentScroll + event.deltaY, 0)
-            //if (currentScroll > scrollThreshold) {
-            //    mainSection.classList.add('hoverUp')
-            //} else {
-            //    mainSection.classList.remove('hoverUp')
-            //}
-
-            // console.log('ABS', Math.abs(currentTop), 'WINDOW', mainSection.offsetHeight)
-            if (Math.abs(currentTop) < mainSectionHeight) {
-                event.preventDefault()
-                //console.log('PREVENT', event)
-            }
-            debounce(() => {
-                console.log('TOP', mainSection.style.top)
-                currentTop -= event.deltaY * mainSection.offsetHeight/mainSectionHeight
-                currentTop = Math.min(0, currentTop)
-                mainSection.style.top = currentTop + 'px'
-            
-                scale += event.deltaY * 0.0005;
-                scale = Math.min(Math.max(1, scale), 1.1)
-                // Apply scale transform
-                mainSection.style.transform = `scale(${scale})`
-            }, 100)()
-        }
-
-        const mainSection = document.getElementById('main')
-        //document.onwheel = debounce(mainWheel, 50)
-        document.onwheel = mainWheel
-
-    </script> -->
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+        // init
+		let controller = new ScrollMagic.Controller()
+
+		// define movement of panels
+		let wipeAnimation = new TimelineMax()
+			.fromTo(".panel.absolute.jpmc",      1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone})  // in from left
+			.fromTo(".panel.absolute.att",       1, {y: "-100%"}, {y: "0%", ease: Linear.easeNone})  // in from top
+            .fromTo(".panel.absolute.sympliact", 1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone}) // in from right
+            .fromTo(".panel.absolute.vize",      1, {y:  "100%"}, {y: "0%", ease: Linear.easeNone}) // in from bottom
+            .fromTo(".panel.absolute.psi",       1, {x: "-100%"}, {x: "0%", ease: Linear.easeNone}) // in from left
+
+
+		// create scene to pin and link animation
+		new ScrollMagic.Scene({
+				triggerElement: "#experience-scroll",
+				triggerHook: "onLeave",
+				duration: "500%"
+			})
+			.setPin("#experience-scroll")
+			.setTween(wipeAnimation)
+			.addIndicators() // add indicators (requires plugin)
+			.addTo(controller)
     </script>
 </body>
 </html>

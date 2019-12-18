@@ -26,7 +26,7 @@ nav {
     position: fixed !important;
     top: 0;
     color: white;
-    z-index: 3;
+    z-index: 1;
     margin: 0;
     height: var(--nav-height);
 }
@@ -38,18 +38,33 @@ section {
 .sticky {
     position: sticky;
     top: 50px;
-    height: var(--section-height);
 }
 
 .sticky-container {
     position: relative;
 }
 
+.panel {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom right, lightgrey, lightblue);
+    /* box-shadow: 0 10px 20px 6px rgb(184, 184, 184); */
+}
+
 #about {
     margin-top: calc(-100vh + var(--nav-height));
-    height: calc(2 * var(--section-height));
+    min-height: calc(2 * var(--section-height));
     z-index: -1;
     align-items: flex-start;
+}
+
+#about .card {
+    /* border: 1px solid blue; */
+    /* margin-top: calc(.2*var(--section-height)) */
+}
+
+#about > .sticky {
+    height: var(--section-height);
 }
 
 #main {
@@ -59,7 +74,7 @@ section {
     padding: 0;
     top: 0;
     overflow-y: none;
-    z-index: 2;
+    z-index: 0;
     /* transition: all 250ms ease-out; */
 }
 
@@ -119,6 +134,8 @@ section {
     /* background: #717171; */
     text-align: center;
     margin-top: 72px;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 #experience > div.card {
@@ -167,6 +184,10 @@ footer {
     padding: 12px 0;
 }
 
+.absolute {
+    position: absolute;
+}
+
 .button {
     padding: 8px;
     border: 1px solid #3a81be;
@@ -190,10 +211,11 @@ footer {
     background: white;
     max-width: 700px;
     padding: 12px;
+    /* border: 1px solid blue; */
 }
 
 .container {
-    background-color: lightblue;
+    /* background-color: lightblue; */
 }
 
 .content {
@@ -246,6 +268,14 @@ footer {
 
 .vcenter-flex {
     align-items: center;
+}
+
+.right-flex {
+    justify-content: right;
+}
+
+.left-flex {
+    justify-content: left;
 }
 
 .spacer {
