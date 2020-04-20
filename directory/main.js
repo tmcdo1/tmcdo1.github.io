@@ -68,6 +68,13 @@ data = [
         url_name: 'aggiecodingconnect',
         owner: 'Thomas, Jeff, Nicko, Mitchell, etc',
         type: type.UTIL
+    },
+    {
+        name: 'MovieMash',
+        url: 'https://moviemash.herokuapp.com/',
+        url_name: 'moviemash.herokuapp.com',
+        owner: 'Thomas, Mitchell, Troy',
+        type: type.UTIL
     }
 ]
 
