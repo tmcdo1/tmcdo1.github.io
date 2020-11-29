@@ -45,9 +45,9 @@ section {
 }
 
 .panel {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(to bottom right, lightgrey, lightblue);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
     /* box-shadow: 0 10px 20px 6px rgb(184, 184, 184); */
 }
 
@@ -110,6 +110,7 @@ section {
 
 #main-picture > img {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 24px;
 }
 
 #main-content {
@@ -130,12 +131,17 @@ section {
 }
 
 #experience {
-    /* background-image: url("images/gray_background.png"); */
-    /* background: #717171; */
     text-align: center;
     margin-top: 72px;
     min-height: 100vh;
     overflow: hidden;
+}
+
+#experience-scroll {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 #experience > div.card {
@@ -184,6 +190,31 @@ footer {
     padding: 12px 0;
 }
 
+/* Job Panel Classes */
+
+.jpmc {
+    /* background-image: url(./images/jpmc-background.jpg);
+    background-size: cover; */
+}
+
+.att {
+
+}
+
+.sympliact {
+
+}
+
+.vize {
+
+}
+
+.psi {
+
+}
+
+/* Job Panel Classes Done */
+
 .absolute {
     position: absolute;
 }
@@ -210,7 +241,8 @@ footer {
     /* box-shadow: 0 4px 8px 0 white; */
     background: white;
     max-width: 700px;
-    padding: 12px;
+    padding: 48px;
+    border-radius: 24px;
     /* border: 1px solid blue; */
 }
 
@@ -371,9 +403,19 @@ footer {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         /* box-shadow: 0 4px 8px 0 white; */
         background: white;
+        padding: 8px;
     }
 
     .even {
         flex-basis: 100vw;
     }
+
+    .topnav {
+        background-color: rgba(51, 51, 51, 0.509);
+    }
+
+    #main-picture > img {
+        margin-top: 24px;
+    }
+
 }
