@@ -1,3 +1,7 @@
+:root {
+    --primary-blue: rgb(20, 105, 252);
+}
+
 html {
     scroll-behavior: smooth;
     width: 100vw;
@@ -15,7 +19,7 @@ body {
 #main {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(20, 105, 252);
+    background-color: var(--primary-blue);
     color: white;
     font-family: 'Bree Serif', serif;
     display: flex;
@@ -102,7 +106,18 @@ body {
 footer {
     width: 100vw;
     min-height: 100px;
-    background-color: rgb(104, 104, 104);
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 24px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
 }
 
 input, textarea {
