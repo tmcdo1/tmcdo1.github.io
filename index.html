@@ -30,23 +30,26 @@
         <script>
             const svg = document.getElementById('wave');
             const path = svg.children[0];
-            const height = 300;
+            const height = svg.parentElement.offsetHeight;
+            const widthMultiplier = 1.01;
+            let windowWidth = svg.parentElement.offsetWidth * widthMultiplier;
             const velocity = 0.005;
 
-            let windowWidth = window.innerWidth;
-            console.log(windowWidth)
-            svg.setAttribute('viewBox', `0 0 ${windowWidth} ${height}`)
-            let start = 0;
-            const xVals = [0, windowWidth/4, windowWidth*2/3, windowWidth];
-            let yVals = new Array(xVals.length);
+            let xVals;
+            let yVals;
+            let start;
             
             function updateWidth() {
-                windowWidth = window.innerWidth;
+                windowWidth = svg.parentElement.offsetWidth * widthMultiplier;
+
+                svg.setAttribute('viewBox', `0 0 ${windowWidth} ${height}`)
+                start = 0;
+                xVals = [0, windowWidth/4, windowWidth*2/3, windowWidth];
+                yVals = new Array(xVals.length);
             }
 
-            document.addEventListener(window.onresize, updateWidth);
+            window.addEventListener('resize', updateWidth);
 
-            // y=sin(x)
             function getY() {
                 start += velocity;
 
@@ -69,6 +72,7 @@
                 path.setAttribute('d', newPath);
             }
 
+            updateWidth();
             setInterval(updateWave, 10);
         </script>
     </div>
