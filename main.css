@@ -8,7 +8,7 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.3em;
+    font-size: 16px;
     padding: 0;
 }
 
@@ -44,10 +44,78 @@ body {
 #contact {
     min-height: 75vh;
     background-color: white;
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#social img {
+    /* width: 40%; */
+    width: 75px;
+    filter: grayscale(100%);
+    transition-duration: 500ms;
+}
+
+#social img:hover {
+    /* width: 40%; */
+    filter: grayscale(0%);
+    transform: scale(1.2);
+}
+
+#social > * {
+    margin: 12px;
+}
+
+.form-div {
+    max-width: 90vw;
+    margin: 24px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 500px;
+    width: 95%;
+    height: auto;
+
+    padding: 12px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+}
+
+#contact-form label, #contact-form input[type="submit"] {
+    margin-top: 8px;
+}
+
+#contact-form input, #contact-form textarea {
+    margin-bottom: 4px;
+}
+
+#contact-form textarea {
+    resize: none;
 }
 
 footer {
     width: 100vw;
     min-height: 100px;
     background-color: rgb(104, 104, 104);
+}
+
+input, textarea {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(200,200,200,0.5);
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
 }

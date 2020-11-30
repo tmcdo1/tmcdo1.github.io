@@ -4,9 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Thomas McDonald</title>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"> -->
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">  -->
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">  
@@ -16,7 +14,7 @@
 <body>
 
     <section id="main">
-        <strong id="main-name">Thomas.</strong></p>
+        <h1 id="main-name">Hi there. I am Thomas.</h1>
     </section>
     <div id="wave-transition">
         <svg id="wave" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">       
@@ -78,14 +76,29 @@
     </div>
     <section id="contact">
         <div id="social">
-            <a href="https://www.linkedin.com/in/thomasejmcdonald">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/thomasejmcdonald"><img src="/images/linkedin.png" alt="LinkedIn profile"></a>
+            <a href="https://www.github.com/tmcdo1"><img src="/images/githubpng.png" alt="GitHub profile"></a>
         </div>
-        <div>
-            <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+        <div class="form-div">
+            <h1>Shoot me a message!</h1>
+            <form id="contact-form" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                <label for="name">Name:</label>
+                <input name="name" type="text" required/>
+        
+                <label for="email">Email:</label>
+                <input name="email" type="email" required/>
     
-                <p class="hidden">
+                <label for="phone">Phone:</label>
+                <input name="phone" type="tel"/>
+    
+                <label for="body">Message:</label>
+                <textarea name="body" id="" cols="30" rows="10" required></textarea>
+    
+                <input type="submit" value="Send"/>
+    
+                <div class="hidden">
                     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-                </p>
+                </div>
             </form>
         </div>
     </section>
