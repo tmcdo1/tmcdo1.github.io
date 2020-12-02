@@ -34,8 +34,8 @@ body {
 
 /* Wave */
 #wave-transition {
-    margin-top: -200px;
-    height: 200px;
+    margin-top: -225px;
+    height: 225px;
     z-index: 1;
 }
 
@@ -43,8 +43,8 @@ body {
     fill: white;
     width: calc(1800px * 10);
     background: url('/images/wave.svg') repeat-x;
-    height: 200px;
-    animation: wave 20s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    height: 225px;
+    animation: wave 40s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite, swell 15s cubic-bezier( 0.73, -0.02, 0.51, 1.01 ) infinite;
 }
 
 @keyframes wave {
@@ -52,7 +52,16 @@ body {
       margin-left: 0;
     }
     100% {
-      margin-left: calc(-1 * 1800px);
+      margin-left: calc(-1 * 3600px);
+    }
+}
+
+@keyframes swell {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(25px);
     }
 }
 
@@ -145,4 +154,17 @@ input, textarea {
 .hidden {
     visibility: hidden;
     height: 0;
+}
+
+.primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.button {
+    transition: 250ms;
+}
+
+.button:hover {
+    filter: brightness(1.5);
 }
