@@ -18,62 +18,6 @@
     </section>
     <div id="wave-transition">
         <div class="wave" />
-        <!-- <svg id="wave" viewBox="0 0 600 100" xmlns="http://www.w3.org/2000/svg">       
-            <path fill-opacity="1" stroke="white"
-            d= "M 0,100
-                L 0,50
-                C 200,0, 400,70, 600,50
-                L 600, 100
-                "/>
-        </svg>
-        <script>
-            const svg = document.getElementById('wave');
-            const path = svg.children[0];
-            const height = svg.parentElement.offsetHeight;
-            const widthMultiplier = 1.01;
-            let windowWidth = svg.parentElement.offsetWidth * widthMultiplier;
-            const velocity = 0.005;
-
-            let xVals;
-            let yVals;
-            let start;
-            
-            function updateWidth() {
-                windowWidth = svg.parentElement.offsetWidth * widthMultiplier;
-
-                svg.setAttribute('viewBox', `0 0 ${windowWidth} ${height}`)
-                start = 0;
-                xVals = [0, windowWidth/4, windowWidth*2/3, windowWidth];
-                yVals = new Array(xVals.length);
-            }
-
-            window.addEventListener('resize', updateWidth);
-
-            function getY() {
-                start += velocity;
-
-                let x = start;
-                for (let i=0; i<yVals.length; i++) {
-                    yVals[i] = Math.sin(x) * (height/3) + (height/2);
-                    x += (1/3*Math.PI/(windowWidth*1/4))*windowWidth*1/3;
-                }
-            }
-
-            function updateWave() {
-                getY();
-                const newPath = `M ${xVals[0]},${height}
-                    L ${xVals[0]},${yVals[0]}
-                    C ${xVals[1]},${yVals[1]},
-                      ${xVals[2]},${yVals[2]}, 
-                      ${xVals[3]},${yVals[3]}
-                    L ${xVals[3]},${height}`
-                
-                path.setAttribute('d', newPath);
-            }
-
-            updateWidth();
-            setInterval(updateWave, 10);
-        </script> -->
     </div>
     <section id="contact">
         <div id="social">

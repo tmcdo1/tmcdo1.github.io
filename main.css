@@ -33,24 +33,8 @@ body {
 }
 
 /* Wave */
-/* #wave-transition {
-    --height: 300px;
-    overflow: hidden;
-    width: 100%;
-    height: var(--height);
-    margin-top: calc(-1 * var(--height));
-    padding: 0;
-} */
- 
-/* #wave {
-    height: 100%;
-    fill: white;
-
-} */
-
 #wave-transition {
     margin: -200px;
-    /* width: 100%; */
 }
 
 .wave {
