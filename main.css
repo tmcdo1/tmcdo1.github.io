@@ -32,19 +32,45 @@ body {
     font-size: xx-large;
 }
 
-#wave-transition {
+/* Wave */
+/* #wave-transition {
     --height: 300px;
     overflow: hidden;
     width: 100%;
     height: var(--height);
     margin-top: calc(-1 * var(--height));
     padding: 0;
-}
-
-#wave {
+} */
+ 
+/* #wave {
     height: 100%;
+    fill: white;
+
+} */
+
+#wave-transition {
+    margin: -200px;
+    /* width: 100%; */
 }
 
+.wave {
+    fill: white;
+    width: calc(1800px * 10);
+    background: url('/images/wave.svg') repeat-x;
+    height: 200px;
+    animation: wave 20s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+}
+
+@keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: calc(-1 * 1800px);
+    }
+}
+
+/* Contact Section */
 #contact {
     min-height: 75vh;
     background-color: white;

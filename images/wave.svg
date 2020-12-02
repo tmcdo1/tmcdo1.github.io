@@ -1,0 +1,9 @@
+<svg id="wave" viewBox="0 0 1800 200" xmlns="http://www.w3.org/2000/svg">       
+    <path fill="white" fill-opacity="1"
+    d= "M 0,200
+        L 0,150
+        C 300,150, 600,0, 900,0
+        C 1200,0, 1500,150, 1800,150
+        L 1800, 200
+        "/>
+</svg>
