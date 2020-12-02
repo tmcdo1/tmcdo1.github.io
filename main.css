@@ -34,7 +34,9 @@ body {
 
 /* Wave */
 #wave-transition {
-    margin: -200px;
+    margin-top: -200px;
+    height: 200px;
+    z-index: 1;
 }
 
 .wave {
