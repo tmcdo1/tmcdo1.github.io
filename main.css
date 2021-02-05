@@ -12,7 +12,7 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: max(16px, 1em);
     padding: 0;
 }
 
@@ -71,7 +71,7 @@ body {
     background-color: white;
     padding: 24px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     align-items: center;
     justify-content: space-around;
 }
@@ -96,6 +96,7 @@ body {
 .form-div {
     max-width: 90vw;
     margin: 24px;
+    flex-basis: 0;
 }
 
 #contact-form {
@@ -105,11 +106,6 @@ body {
     max-width: 500px;
     width: 95%;
     height: auto;
-
-    padding: 12px;
-    background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 8px;
 }
 
 #contact-form label, #contact-form input[type="submit"] {
@@ -122,6 +118,10 @@ body {
 
 #contact-form textarea {
     resize: none;
+}
+
+.section {
+    padding: 24px;
 }
 
 footer {
@@ -142,7 +142,6 @@ footer a {
 }
 
 input, textarea {
-    font-size: 16px;
     font-size: max(16px, 1em);
     font-family: inherit;
     padding: 0.25em 0.5em;
@@ -167,4 +166,38 @@ input, textarea {
 
 .button:hover {
     filter: brightness(1.5);
+}
+
+.card {
+    padding: 16px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.no-style-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-sections {
+    flex-basis: 0;
+    flex-grow: 1;
+    display: flex; justify-content: center;
+}
+
+#hobbies {
+    font-size: larger;
+}
+
+#hobbies > li {
+    margin: 12px;
 }

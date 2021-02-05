@@ -14,19 +14,40 @@
 <body>
 
     <section id="main">
-        <h1 id="main-name">Hi there. I am Thomas.</h1>
+        <h1 id="main-name">Hi there. My name is Thomas</h1>
     </section>
     <div id="wave-transition">
         <div class="wave"></div>
     </div>
-    <section id="contact">
+    <section id="about" class="section">
+        <!-- <h1>About Me</h1> -->
+        <div class="about-sections" style="display: flex; justify-content: center;">
+            <div class="card" style="max-width: 550px; min-width: 350px;">
+                <p>
+                    I am a technical consultant at <a href="https://credera.com/">Credera</a> that helps build out solutions for our clients. I love to learn and touch a lot of different things from working website frontends, buiding out backend systems, or even collecting metrics and analyzing user behavior.
+                </p>
+            </div>
+        </div>
+        <div class="about-sections" style="padding: 24px;">
+            <ul id="hobbies" class="no-style-list">
+                <h1>Interests</h1>
+                <li>🧗 Rock Climbing</li>
+                <li>🍳 Cooking</li>
+                <li>🚣 Kayaking</li>
+                <li>🖥️ Software Development</li>
+                <li>📈 Personal Finance</li>
+            </ul>
+        </div>
+    </section>
+    <section id="contact" class="section">
         <div id="social">
+            
             <a href="https://www.linkedin.com/in/thomasejmcdonald"><img src="/images/linkedin.png" alt="LinkedIn profile"></a>
             <a href="https://www.github.com/tmcdo1"><img src="/images/githubpng.png" alt="GitHub profile"></a>
         </div>
         <div class="form-div">
             <h1>Shoot me a message!</h1>
-            <form id="contact-form" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+            <form id="contact-form" class="card" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
                 <label for="name">Name:</label>
                 <input name="name" type="text" required/>
         
