@@ -4,152 +4,74 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Thomas McDonald</title>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">  
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <nav id="navbar" class="topnav">
-        <a href="#main" class="nav-link">Thomas McDonald</a>
-        <div class="spacer"></div>
-        <a href="#about" class="nav-link">About Me</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="javascript:void(0);" class="icon" onclick="navbar()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </nav>
-    <script>
-        function navbar() {
-            var x = document.getElementById("navbar");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
 
-        function resClickListener() {
-            if(document.getElementById("navbar").classList.contains("responsive")) {
-                document.getElementById("navbar").className = "topnav"
-            }
-        }
-
-        let navLinks = document.getElementsByClassName("nav-link")
-        for(link of navLinks) {
-            link.addEventListener('click', resClickListener)
-        }
-    </script>
-
-    <section id="main" class="parallax">
-        <div id="main-picture">
-            <img src='./images/thomas.png' height='100%'/>
-        </div>
-        <div id="main-content">
-            <h3>Thomas McDonald</h3>
-            <p>B.S. in Computer Science</p>
-            <p>Texas A&M University, Class of 2020</p>
-        </div>
+    <section id="main">
+        <h1 id="main-name">Hi there. My name is Thomas</h1>
     </section>
-
-    <section id="about" class="flex hcenter-flex vcenter-flex vertical-flex card">
-        <h1>About Me</h1>
-        <div>
-            <p>
-                Howdy! I am a senior computer science student at Texas A&M University. I am the co-chair for workshops for the Aggie Coding Club,
-                a project based organization that connects students to work on projects. We put on weekly workshops for our members covering topics
-                from getting started with Git to creating a web application to using Docker to containerize an application.
-            </p>
-            <p>
-                I love learning about how to to automate the development lifecycle from using CI tools to deploying with an orchestration platform, like Kubernetes. 
-                Most of my experience is doing web development with some more experience in developing for Kubernetes and other development work.
-            </p>
-            <p>
-                Outside of development, I write a blog called <a href='https://livingintrospectively.com'><em>Living Introspectively</em></a>.
-            </p>
+    <div id="wave-transition">
+        <div class="wave"></div>
+    </div>
+    <section id="about" class="section">
+        <!-- <h1>About Me</h1> -->
+        <div class="about-sections" style="display: flex; justify-content: center;">
+            <div class="card" style="max-width: 550px; min-width: 350px;">
+                <p>
+                    I am a technical consultant at <a href="https://credera.com/">Credera</a> that helps build out solutions for our clients. I love to learn and touch a lot of different things from working website frontends, buiding out backend systems, or even collecting metrics and analyzing user behavior.
+                </p>
+            </div>
         </div>
-        <div id="about-buttons">
-            <a class="button" href="resume/" target="_blank">Resume</a>
-            <a class="button" href="classes/index.html">Classes</a>
-        </div>
-    </section>
-
-    <section id="experience" class="flex vertical-flex">
-        <h2>Experience</h2>
-        <div class="card" data-aos="slide-right">
-            <h3><img id="att-logo" class="jpmc-logo exp-logo" src="images/jpmc.png" alt="JP Morgan Logo"></h3>
-            <h5>Software Engineering Intern</h5>
-            <ul>
-                <li>Introduced Blue/Green deployments and post verification testing to increase automation</li>
-                <li>Developed logging utility to centralize application logs using ElasticSearch and reduced number of emails from ~300 to 15 per release</li>
-            </ul>
-        </div>
-        <div class="card" data-aos="slide-right">
-            <h3><img id="att-logo" class="exp-logo" src="images/att.png" alt="AT&T Logo"><span>AT&T</span></h3>
-            <h5>Software Engineering Intern</h5>
-            <ul>
-                <li>Worked heavily with Kubernetes to deploy and scale microservices to be used by the entire company</li>
-                <li>Worked with clients to send application alerts from their deployed services and create custom Docker images</li>
-                <li>Created an analytic dashboard with a team of interns to provide insights</li>
-            </ul>
-        </div>
-        <div class="card" data-aos="slide-left">
-            <h3><img id="sympliact-logo" class="exp-logo" src="images/sympliact.svg"><span>Sympliact</span></h3>
-            <h5>Web Developer</h5>
-            <ul>
-                <li>Worked on web platform using React and Node.js that is used in a medical practice to track and manage patients</li>
-            </ul>
-        </div>
-        <div class="card" data-aos="slide-right">
-            <h3><img id="vize-logo" class="exp-logo" src="https://static1.squarespace.com/static/58faab4846c3c46446a9d0dc/t/5955b5256b8f5be1da3b6bf8/1543894989748/?format=1500w"></h3>
-            <h5>Software Engineer</h5>
-            <ul>
-                <li>Developed automated SMS survey tool with AWS Lambda and Twilio API</li>
-                <li>Did basic front-end work with Bootstrap and React</li>
-            </ul>
-        </div>
-        <div class="card" data-aos="slide-left">
-            <h3><img id="psi-logo" class="exp-logo" src="images/psi_small.png"><span>PSI Labs, Texas A&M University</span></h3>
-            <h5>Summer Undergraduate Researcher</h5>
-            <ul>
-                <li>Developed a mobile game using Unity and Andriod Studio</li>
-                <li>Wrote code to stream heart rate variability from a wearable sensor to the phone</li>
+        <div class="about-sections" style="padding: 24px;">
+            <ul id="hobbies" class="no-style-list">
+                <h1>Interests</h1>
+                <li>🧗 Rock Climbing</li>
+                <li>🍳 Cooking</li>
+                <li>🚣 Kayaking</li>
+                <li>🖥️ Software Development</li>
+                <li>📈 Personal Finance</li>
             </ul>
         </div>
     </section>
-
-    <section id="projects" class="flex vcenter-flex hcenter-flex vertical-flex">
-        <h2>Projects</h2>
+    <section id="contact" class="section">
+        <div id="social">
+            
+            <a href="https://www.linkedin.com/in/thomasejmcdonald"><img src="/images/linkedin.png" alt="LinkedIn profile"></a>
+            <a href="https://www.github.com/tmcdo1"><img src="/images/githubpng.png" alt="GitHub profile"></a>
+        </div>
+        <div class="form-div">
+            <h1>Shoot me a message!</h1>
+            <form id="contact-form" class="card" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                <label for="name">Name:</label>
+                <input name="name" type="text" required/>
+        
+                <label for="email">Email:</label>
+                <input name="email" type="email" required/>
+    
+                <label for="phone">Phone:</label>
+                <input name="phone" type="tel"/>
+    
+                <label for="body">Message:</label>
+                <textarea name="body" id="" cols="30" rows="10" required></textarea>
+    
+                <input class="primary button" type="submit" value="Send"/>
+    
+                <div class="hidden">
+                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
         <ul>
-            <li><a class='page-link' target='_blank' href='https://github.com/gracewes/431-Creative'>Aggie Coding Connect</a></li>
-            <li><a class='page-link' target='_blank' href='http://tmcd.me/tab'>Home Page</a></li>
-            <li><a class='page-link' target='_blank' href='http://tmcd.me/directory/'>Site Directory</a></li>
-            <li>More on <a class='page-link' target='_blank' href='https://github.com/tmcdo1'>GitHub</a></li>
+            <li><a href="/directory">Projects Directory</a></li>
         </ul>
-    </section>
-
-    <section id="contact" class="flex vertical-flex hcenter-flex vcenter-flex">
-        <h1>Contact and Other Info</h1>
-        <ul id="social">
-            <h4>Social</h4>
-            <li><a href='https://github.com/tmcdo1' class='page-link' target='_blank'><img src='./images/githubpng.png'/> Github</a></li>
-            <li><a href='https://www.linkedin.com/in/thomasejmcdonald' class='page-link' target='_blank'><img src='./images/linkedin.png'/> LinkedIn</a></li>
-
-            <h4>Email</h4>
-            <li><span>thomasmcdonald</span>@<span>tamu.edu</span></li>
-        </ul>
-    </section>
-
-    <footer>Thomas McDonald © 2019</footer>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    </footer>
 </body>
 </html>
