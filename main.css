@@ -30,6 +30,7 @@ body {
 
 #main-name {
     font-size: xx-large;
+    margin: 16px;
 }
 
 /* Wave */
@@ -200,4 +201,15 @@ input, textarea {
 
 #hobbies > li {
     margin: 12px;
+}
+
+@media screen and (max-width: 715px) {
+    #main {
+        justify-content: flex-start;
+    }
+
+    #main-name {
+        font-size: xx-large;
+        margin-top: 35vh;
+    }
 }
