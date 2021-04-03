@@ -103,9 +103,7 @@ body {
 #contact-form {
     display: flex;
     flex-direction: column;
-    min-width: 300px;
     max-width: 500px;
-    width: 95%;
     height: auto;
 }
 
@@ -145,10 +143,15 @@ footer a {
 input, textarea {
     font-size: max(16px, 1em);
     font-family: inherit;
-    padding: 0.25em 0.5em;
+    padding: 0.75em 0.75em;
     background-color: #fff;
-    border-radius: 4px;
+    border-radius: 0.5rem;
     border: 1px solid rgba(200,200,200,0.5);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px rgb(249, 219, 134);
 }
 
 .hidden {
@@ -163,6 +166,8 @@ input, textarea {
 
 .button {
     transition: 250ms;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
 }
 
 .button:hover {
@@ -174,6 +179,12 @@ input, textarea {
     background-color: white;
     border-radius: 8px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    line-height: 1.75rem;
+}
+
+.content {
+    max-width: 1380px;
+    margin: 0 auto;
 }
 
 .no-style-list {
